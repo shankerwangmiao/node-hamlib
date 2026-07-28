@@ -245,7 +245,7 @@ struct NamedBit {
 
 static const NamedBit kMemoryFunctionBits[] = {
   {"FAGC", SHIM_RIG_FUNC_FAGC}, {"NB", SHIM_RIG_FUNC_NB}, {"COMP", SHIM_RIG_FUNC_COMP},
-  {"VOX", SHIM_RIG_FUNC_VOX}, {"TONE", SHIM_RIG_FUNC_TONE}, {"TSQL", SHIM_RIG_FUNC_TSQL},
+  {"VOX", SHIM_RIG_FUNC_VOX}, {"TONE", SHIM_RIG_FUNC_TONE}, {"TSQL", SHIM_RIG_FUNC_TSQL}, {"CSQL", SHIM_RIG_FUNC_CSQL},
   {"SBKIN", SHIM_RIG_FUNC_SBKIN}, {"FBKIN", SHIM_RIG_FUNC_FBKIN}, {"ANF", SHIM_RIG_FUNC_ANF},
   {"NR", SHIM_RIG_FUNC_NR}, {"AIP", SHIM_RIG_FUNC_AIP}, {"APF", SHIM_RIG_FUNC_APF},
   {"MON", SHIM_RIG_FUNC_MON}, {"MN", SHIM_RIG_FUNC_MN}, {"RF", SHIM_RIG_FUNC_RF},
@@ -4266,6 +4266,8 @@ Napi::Value NodeHamLib::SetFunction(const Napi::CallbackInfo & info) {
     funcType = SHIM_RIG_FUNC_TONE;
   } else if (funcTypeStr == "TSQL") {
     funcType = SHIM_RIG_FUNC_TSQL;
+  } else if (funcTypeStr == "CSQL") {
+    funcType = SHIM_RIG_FUNC_CSQL;
   } else if (funcTypeStr == "SBKIN") {
     funcType = SHIM_RIG_FUNC_SBKIN;
   } else if (funcTypeStr == "FBKIN") {
@@ -4352,6 +4354,8 @@ Napi::Value NodeHamLib::GetFunction(const Napi::CallbackInfo & info) {
     funcType = SHIM_RIG_FUNC_TONE;
   } else if (funcTypeStr == "TSQL") {
     funcType = SHIM_RIG_FUNC_TSQL;
+  } else if (funcTypeStr == "CSQL") {
+    funcType = SHIM_RIG_FUNC_CSQL;
   } else if (funcTypeStr == "SBKIN") {
     funcType = SHIM_RIG_FUNC_SBKIN;
   } else if (funcTypeStr == "FBKIN") {
@@ -4427,6 +4431,7 @@ Napi::Value NodeHamLib::GetSupportedFunctions(const Napi::CallbackInfo & info) {
       if (functions & SHIM_RIG_FUNC_VOX) values->push_back("VOX");
       if (functions & SHIM_RIG_FUNC_TONE) values->push_back("TONE");
       if (functions & SHIM_RIG_FUNC_TSQL) values->push_back("TSQL");
+      if (functions & SHIM_RIG_FUNC_CSQL) values->push_back("CSQL");
       if (functions & SHIM_RIG_FUNC_SBKIN) values->push_back("SBKIN");
       if (functions & SHIM_RIG_FUNC_FBKIN) values->push_back("FBKIN");
       if (functions & SHIM_RIG_FUNC_ANF) values->push_back("ANF");

@@ -286,6 +286,7 @@ typedef void* hamlib_shim_handle_t;
 #define SHIM_RIG_FUNC_TBURST  (1ULL << 29)
 #define SHIM_RIG_FUNC_TUNER   (1ULL << 30)
 #define SHIM_RIG_FUNC_XIT     (1ULL << 31)
+#define SHIM_RIG_FUNC_CSQL    (1ULL << 33)
 #define SHIM_RIG_FUNC_TRANSCEIVE (1ULL << 42)
 #define SHIM_RIG_FUNC_SPECTRUM (1ULL << 43)
 #define SHIM_RIG_FUNC_SPECTRUM_HOLD (1ULL << 44)

@@ -471,7 +471,7 @@ type LevelType = 'AF' | 'PREAMP' | 'ATT' | 'RF' | 'SQL' | 'RFPOWER' | 'MICGAIN' 
 /**
  * Function type
  */
-type FunctionType = 'FAGC' | 'NB' | 'COMP' | 'VOX' | 'TONE' | 'TSQL' | 'SBKIN' | 
+type FunctionType = 'FAGC' | 'NB' | 'COMP' | 'VOX' | 'TONE' | 'TSQL' | 'CSQL' | 'SBKIN' | 
                     'FBKIN' | 'ANF' | 'NR' | 'AIP' | 'APF' | 'TUNER' | 'XIT' | 
                     'RIT' | 'LOCK' | 'MUTE' | 'VSC' | 'REV' | 'SQL' | 'ABM' | 
                     'BC' | 'MBC' | 'AFC' | 'SATMODE' | 'SCOPE' | 'RESUME' | 'TRANSCEIVE' |
