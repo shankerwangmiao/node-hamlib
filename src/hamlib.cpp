@@ -7894,8 +7894,8 @@ Napi::Value NodeHamLib::GetFrequencyRanges(const Napi::CallbackInfo& info) {
       (void)error_message;
       shim_freq_range_t rx_buf[30];
       shim_freq_range_t tx_buf[30];
-      int rx_count = shim_rig_get_caps_rx_range(instance->my_rig, rx_buf, 30);
-      int tx_count = shim_rig_get_caps_tx_range(instance->my_rig, tx_buf, 30);
+      int rx_count = shim_rig_get_rx_range(instance->my_rig, rx_buf, 30);
+      int tx_count = shim_rig_get_tx_range(instance->my_rig, tx_buf, 30);
       data->rx.assign(rx_buf, rx_buf + std::max(0, rx_count));
       data->tx.assign(tx_buf, tx_buf + std::max(0, tx_count));
     },

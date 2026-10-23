@@ -846,8 +846,8 @@ SHIM_API int shim_rig_get_caps_ctcss_list(hamlib_shim_handle_t h, unsigned int* 
 SHIM_API int shim_rig_get_caps_dcs_list(hamlib_shim_handle_t h, unsigned int* out, int max_count);
 
 /* Group C: Structured data */
-SHIM_API int shim_rig_get_caps_rx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count);
-SHIM_API int shim_rig_get_caps_tx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count);
+SHIM_API int shim_rig_get_rx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count);
+SHIM_API int shim_rig_get_tx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count);
 SHIM_API int shim_rig_get_caps_tuning_steps(hamlib_shim_handle_t h, shim_mode_value_t* out, int max_count);
 SHIM_API int shim_rig_get_caps_filters(hamlib_shim_handle_t h, shim_mode_value_t* out, int max_count);
 SHIM_API int shim_rig_get_level_granularity(hamlib_shim_handle_t h, uint64_t level, shim_granularity_t* out);

@@ -2101,12 +2101,12 @@ SHIM_API int shim_rig_get_caps_dcs_list(hamlib_shim_handle_t h, unsigned int* ou
 
 /* ===== Capability Query: Frequency ranges ===== */
 
-SHIM_API int shim_rig_get_caps_rx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count) {
+SHIM_API int shim_rig_get_rx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count) {
     RIG *rig = (RIG *)h;
     if (!rig || !out || max_count <= 0) return 0;
     int count = 0;
     for (int i = 0; i < HAMLIB_FRQRANGESIZ && count < max_count; i++) {
-        const freq_range_t *r = &rig->caps->rx_range_list1[i];
+        const freq_range_t *r = &rig->state.rx_range_list[i];
         if (r->startf == 0 && r->endf == 0) break;
         out[count].start_freq = (double)r->startf;
         out[count].end_freq = (double)r->endf;
@@ -2120,12 +2120,12 @@ SHIM_API int shim_rig_get_caps_rx_range(hamlib_shim_handle_t h, shim_freq_range_
     return count;
 }
 
-SHIM_API int shim_rig_get_caps_tx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count) {
+SHIM_API int shim_rig_get_tx_range(hamlib_shim_handle_t h, shim_freq_range_t* out, int max_count) {
     RIG *rig = (RIG *)h;
     if (!rig || !out || max_count <= 0) return 0;
     int count = 0;
     for (int i = 0; i < HAMLIB_FRQRANGESIZ && count < max_count; i++) {
-        const freq_range_t *r = &rig->caps->tx_range_list1[i];
+        const freq_range_t *r = &rig->state.tx_range_list[i];
         if (r->startf == 0 && r->endf == 0) break;
         out[count].start_freq = (double)r->startf;
         out[count].end_freq = (double)r->endf;
